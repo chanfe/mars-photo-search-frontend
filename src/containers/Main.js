@@ -3,9 +3,12 @@ import { Button, Header, Image, Icon, Form, Checkbox, Grid, Segment, Container }
 
 import Pictures from './Pictures'
 import Search from './Search'
-import Title from '../components/Title'
+import Camera from './Camera'
 
-const URL = 'http://localhost:3000/';
+import Title from '../components/Title'
+import './Main.scss'
+
+const URL = 'https://mars-photo-backend.herokuapp.com/';
 
 
 class Main extends Component {

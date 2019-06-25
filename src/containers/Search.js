@@ -49,8 +49,8 @@ class Search extends Component {
       <Container textAlign='left'>
         <h2>Curiosity</h2>
         <Form onSubmit={this.handleSubmit}>
+            <label>sol</label>
             <Form.Field value={this.state.sol} onChange={this.handlesol}>
-              <label>sol</label>
               <input placeholder='sol' />
             </Form.Field>
             <label>camera</label>
@@ -65,7 +65,7 @@ class Search extends Component {
                   <option value="RHAZ">RHAZ</option>
                </select>
             <br />
-            <Button type='submit' >Find Photo</Button>
+            <Button type='submit' >Find Photos</Button>
           </Form>
     
       </Container>
