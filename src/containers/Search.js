@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-import { Container, Form, Button } from 'semantic-ui-react'
+import { Container, Form, Button, Select } from 'semantic-ui-react'
+
+const cameraOptions = [
+    { key: 'all', text: 'all', value: 'all' },
+    { key: 'FHAZ', text: 'FHAZ', value: 'FHAZ' },
+    { key: 'NAVCAM', text: 'NAVCAM', value: 'NAVCAM' },
+    { key: 'MAST', text: 'MAST', value: 'MAST' },
+    { key: 'CHEMCAM', text: 'CHEMCAM', value: 'CHEMCAM' },
+    { key: 'MAHLI', text: 'MAHLI', value: 'MAHLI' },
+    { key: 'MARDI', text: 'MARDI', value: 'MARDI' },
+    { key: 'RHAZ', text: 'RHAZ', value: 'RHAZ' },
+  ]
+  
 
 class Search extends Component {
     constructor(props){
         super(props)
         this.state ={
           sol:"",
-          camera:""
+          camera:"all"
         }
       }
     
@@ -41,10 +53,18 @@ class Search extends Component {
               <label>sol</label>
               <input placeholder='sol' />
             </Form.Field>
-            <Form.Field  value={this.state.camera} onChange={this.handlecamera}>
-              <label>camera</label>
-              <input placeholder='camera'/>
-            </Form.Field>
+            <label>camera</label>
+            <select id="camera" value={this.state.camera} onChange={this.handlecamera}>
+                  <option value="all">all</option>
+                  <option value="FHAZ">FHAZ</option>
+                  <option value="NAVCAM">NAVCAM</option>
+                  <option value="MAST">MAST</option>
+                  <option value="CHEMCAM">CHEMCAM</option>
+                  <option value="MAHLI">MAHLI</option>
+                  <option value="MARDI">MARDI</option>
+                  <option value="RHAZ">RHAZ</option>
+               </select>
+            <br />
             <Button type='submit' >Find Photo</Button>
           </Form>
     

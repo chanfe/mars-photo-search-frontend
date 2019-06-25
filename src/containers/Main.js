@@ -12,6 +12,7 @@ class Main extends Component {
     constructor(props){
         super(props)
         this.state = {
+            data:[]
         }
       }
 
@@ -23,10 +24,10 @@ class Main extends Component {
                 // "Content-Type": "application/x-www-form-urlencoded",
                 },
             body: JSON.stringify({
-                'sol':1000,
-                'camera':'all',
+                'sol':e.sol,
+                'camera':e.camera,
             }),
-        }).then(res => res.json()).then(console.log)
+        }).then(res => res.json()).then(data => {this.setState({data:data['photos']})})
     }
 
   render(){
@@ -34,7 +35,7 @@ class Main extends Component {
       <Container textAlign='left'>
         <Title />
         <Search onSubmit={this.onSubmit}/>
-        <Pictures />
+        <Pictures state={this.state}/>
       </Container>
     )
   }
