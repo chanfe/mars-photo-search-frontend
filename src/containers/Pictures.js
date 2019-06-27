@@ -14,7 +14,7 @@ class Pictures extends Component {
     return (
       <Container textAlign='left'>
         {this.props.state.data.map(e => 
-            <PictureCard ele={e}/>
+            <PictureCard ele={e} key={e['id']}/>
             )}
       </Container>
     )
